@@ -1,0 +1,30 @@
+# Rankup 1.2 Fixer configuration
+language: pt
+
+settings:
+  money-format-locale: "pt-BR"
+  broadcast-rankup: true
+  enable-tags: true
+
+database:
+  mysql:
+    enabled: false
+    host: "localhost"
+    port: "3306"
+    database: "minecraft"
+    username: "root"
+    password: ""
+
+discord-webhook:
+  enabled: false
+  url: "COLE_SEU_WEBHOOK_AQUI"
+  username: "Rankup Bot"
+  avatar-url: "https://example.com"
+
+hooks:
+  griefprevention: true
+  slimefun: true
+  vault: true
+
+playtime:
+  use-essentials-playtime: true
