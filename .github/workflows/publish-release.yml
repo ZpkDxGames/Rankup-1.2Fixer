@@ -1,0 +1,45 @@
+name: Publish Rankup 1.2 Fixer Release
+
+on:
+  push:
+    paths:
+      - 'release-assets/Rankup-1.2Fixer.jar'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify release JAR
+        run: |
+          test -f release-assets/Rankup-1.2Fixer.jar
+          sha256sum release-assets/Rankup-1.2Fixer.jar
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.2-Fixer
+          name: Rankup 1.2 Fixer
+          target_commitish: main
+          generate_release_notes: false
+          body: |
+            ## Rankup 1.2 Fixer
+
+            Maintained Rankup 1.2 build for PlexonCraft.
+
+            ### Changes
+            - Configurable per-rank lore in the `/rank` GUI through `ranks.yml`.
+            - Custom lore placeholders for rank requirements, status and metadata.
+            - `%rewards%` expansion for human-readable reward lists.
+            - Backward-compatible fallback to the original Rankup 1.2 lore.
+            - Existing SQLite/MySQL player data and rank progression remain compatible.
+            - Java 21 / Paper 1.21.x compatible.
+
+            ### Installation
+            Replace the previous Rankup JAR with `Rankup-1.2Fixer.jar`, retain your existing plugin data folder, and restart the server.
+          files: release-assets/Rankup-1.2Fixer.jar
