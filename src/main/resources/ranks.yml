@@ -1,0 +1,89 @@
+# Rankup 1.2 Fixer starter ranks file.
+# PlexonCraft's full lore-ready production ranks.yml is distributed with the compiled build.
+# Every rank can override its /rank GUI entry through menu.lore.
+# Supported placeholders: %status%, %rank_id%, %rank_display%, %rank_tag%, %money%,
+# %xp%, %playtime%, %commands_count%, %permissions_count%, and whole-line %rewards%.
+
+ranks:
+  '0':
+    display-name: "&8[&7Unranked&8]&r"
+    tag: "&8[&7Unranked&8]&r"
+    requirements:
+      money: 0
+      xp-levels: 0
+      play-time-minutes: 0
+    rewards:
+      commands: []
+      permissions: []
+      display: []
+    menu:
+      lore:
+        - "&8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        - "&7Status: %status%"
+        - ""
+        - "&7Your progression starts here."
+        - "&7Use &e/rankup &7to begin climbing."
+        - "&8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    announce: false
+
+  '1':
+    display-name: "&8[&7Rank I&8]&r"
+    tag: "&8[&7Rank I&8]&r"
+    requirements:
+      money: 2000.0
+      xp-levels: 1
+      play-time-minutes: 180
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 1000"
+      permissions:
+        - "rank.1"
+      display:
+        - "&8• &a+1,000 &7Claim Blocks"
+    menu:
+      lore:
+        - "&8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        - "&7Status: %status%"
+        - ""
+        - "&f&lRequirements"
+        - "&8• &7Money: &e$%money%"
+        - "&8• &7XP Levels: &e%xp%"
+        - "&8• &7Playtime: &e%playtime% min"
+        - ""
+        - "&f&lRewards"
+        - "%rewards%"
+        - ""
+        - "&8Rank ID: &7%rank_id%"
+        - "&8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    announce: true
+
+  '2':
+    display-name: "&8[&fRank II&8]&r"
+    tag: "&8[&fRank II&8]&r"
+    requirements:
+      money: 4000.0
+      xp-levels: 2
+      play-time-minutes: 360
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 2000"
+      permissions:
+        - "rank.2"
+      display:
+        - "&8• &a+2,000 &7Claim Blocks"
+    menu:
+      lore:
+        - "&8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        - "&7Status: %status%"
+        - ""
+        - "&f&lRequirements"
+        - "&8• &7Money: &e$%money%"
+        - "&8• &7XP Levels: &e%xp%"
+        - "&8• &7Playtime: &e%playtime% min"
+        - ""
+        - "&f&lRewards"
+        - "%rewards%"
+        - ""
+        - "&8Rank ID: &7%rank_id%"
+        - "&8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    announce: true
