@@ -1,0 +1,29 @@
+name: Rankup
+version: '1.2-Fixer'
+main: com.comonier.Rankup
+api-version: '1.21'
+author: comonier
+contributors: [ZpkDxGames]
+description: Rankup 1.2 compatibility fork with configurable per-rank GUI lore.
+
+commands:
+  rank:
+    description: Opens the visual rank menu and shows progression in chat.
+    usage: /rank
+  rankup:
+    description: Attempts to promote the player when requirements are met.
+    usage: /rankup
+  rankreload:
+    description: Reloads configuration, messages and ranks.
+    permission: rankup.admin
+
+depend: [Vault]
+softdepend: [PlaceholderAPI, LuckPerms, GriefPrevention, RedProtect, Slimefun, WorldGuard, Essentials, VentureChat]
+
+permissions:
+  rankup.admin:
+    description: Full permission to manage and reload Rankup.
+    default: op
+  rankup.player:
+    description: Permission to use /rank and /rankup.
+    default: true
